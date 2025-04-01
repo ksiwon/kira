@@ -1,0 +1,244 @@
+/* App.css */
+
+#root {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0; margin:0;
+  text-align: center;
+  background-color: #fff;
+  display:flex;
+  justify-content: center;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  max-width: 1200px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Pretendard', sans-serif;
+
+  .App-header {
+    flex: 0 0 48px;
+    top: 0; left: 0;
+    width: 100%;
+    height: 48px;
+    font-size: 24px;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    h4 {
+      margin: 0; padding: 0;
+      font-size: 20px;
+    }
+    .apiKey {
+      position: absolute;
+      right: 24px;
+      top: 12px;
+      bottom: 0;
+      margin: auto;
+      font-size: 16px;
+      color: #666;
+      label {
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .App-body {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 0px;
+
+    .Dialogues {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      border-bottom: 1px solid #ccc;
+      background-color: #ffc0cb;
+    
+      .UserDialogue {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    
+        .UserMessage {
+          max-width: calc(100% - 80px);
+          background-color: #f5ea61;
+          color: black;
+          border-radius: 12px;
+          padding: 8px 12px;
+          margin: 12px;
+          box-sizing: border-box;
+          text-align: right;
+          font-size: 16px;
+          z-index: 1;
+        }
+      }
+    
+      .BotDialogue {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    
+        .BotMessage {
+          max-width: calc(100% - 80px);
+          background-color: #fff;
+          color: #000;
+          border-radius: 12px;
+          padding: 8px 12px;
+          margin: 12px;
+          box-sizing: border-box;
+          text-align: left;
+          font-size: 16px;
+          white-space: pre-wrap;
+          z-index: 1;
+        
+          table.ReservationForm {
+            margin: 12px 0px;
+            /* border: 1px solid white; */
+            /* border-collapse: collapse; */
+        
+            td {
+              font-size: 0.9em;
+              background: #f7f7f7;
+              padding: 4px 8px;
+              min-width: 120px;
+            }
+        
+            th {
+              font-size: 0.9em;
+              background: #ff8db1;
+              padding: 4px 8px;
+              min-width: 120px;
+              text-align: right;
+              font-weight: bold;
+              color: #FFF;
+            }
+        
+            td.isComplete {
+              text-align: center;
+              padding: 12px;
+        
+              span {
+                font-weight: 400;
+                color: #FF0000;
+              }
+        
+              button {
+                background-color: blueviolet;
+                color: white;
+              }
+            }
+          }
+        }        
+      }    
+    }    
+    .bottomUI {
+      flex: 0 0 160px;
+      width: 100%;
+      height: 160px;
+      font-size: 24px;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      background-color: #fff7ff;
+      z-index: 1;
+
+      textarea {
+        flex: 1 1 auto;
+        font-family: 'Pretendard', sans-serif;
+        width: calc(100% - 80px);
+        border: 1px solid #ccc;
+        background-color: #fff;
+        color: #000;
+        padding: 12px;
+        border-radius: 12px;
+      }
+
+      button.SendButton {
+        flex: 0 0 80px;
+        width: 80px;
+        border-radius: 12px;
+        background-color: #ff8db1;
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+.OptionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.OptionButton {
+  background-color: #ff8db1;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.OptionButton:hover {
+  background-color: #ff7ca0;
+}
+
+/* Sakura effect CSS */
+.sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+.sakura {
+  position: absolute;
+  top: 0;
+  background-image: url('/sakura.png');
+  background-size: cover;
+  opacity: 0.8;
+  animation: fall-sakura 10s linear infinite;
+}
+
+@keyframes fall-sakura {
+  0% {
+    transform: translateY(-100px) rotate(var(--initial-rotate, 0deg));
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(var(--fall-translateX, -20vw)) rotate(calc(var(--initial-rotate, 0deg) + var(--rotate-amount, 360deg)));
+    opacity: 0;
+  }
+}
