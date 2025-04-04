@@ -14,7 +14,7 @@
   width: 100%;
   min-height: 100vh;
   max-height: 100vh;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   display: flex;
